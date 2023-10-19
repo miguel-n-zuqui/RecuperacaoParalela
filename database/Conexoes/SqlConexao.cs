@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace database.Conexoes
 {
@@ -14,7 +15,10 @@ namespace database.Conexoes
         /// <returns>string: ConnectionString</returns>
         internal static string StrConexao()
         {
-            return @"Data Source=.\\SQLEXPRESS;Initial Catalog=AdvAbc;User ID=sa;Password=sql2022";
+            return @"Data Source=.\SQLEXPRESS;Initial Catalog=AdvAbc;User ID=sa;Password=sql2022;Trusted_Connection=False; TrustServerCertificate=True;";
+            
+
+
         }
 
     }

@@ -41,7 +41,8 @@
             textBox2 = new TextBox();
             txtEndereco = new TextBox();
             gvUsuarios = new DataGridView();
-            bntSalvar = new Button();
+            Deletar = new DataGridViewButtonColumn();
+            btnCadastrar = new Button();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -51,7 +52,6 @@
             btnRecarregar = new Button();
             groupBoxUsuario = new GroupBox();
             btnNovoUsuario = new Button();
-            Deletar = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)gvUsuarios).BeginInit();
             groupBoxUsuario.SuspendLayout();
             SuspendLayout();
@@ -162,15 +162,20 @@
             gvUsuarios.TabIndex = 17;
             gvUsuarios.CellMouseClick += gvUsuarios_CellMouseClick;
             // 
-            // bntSalvar
+            // Deletar
             // 
-            bntSalvar.Location = new Point(529, 193);
-            bntSalvar.Name = "bntSalvar";
-            bntSalvar.Size = new Size(100, 23);
-            bntSalvar.TabIndex = 18;
-            bntSalvar.Text = "Salvar";
-            bntSalvar.UseVisualStyleBackColor = true;
-            bntSalvar.Click += bntSalvar_Click;
+            Deletar.HeaderText = "Excluir";
+            Deletar.Name = "Deletar";
+            // 
+            // btnCadastrar
+            // 
+            btnCadastrar.Location = new Point(529, 193);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(100, 23);
+            btnCadastrar.TabIndex = 18;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += bntSalvar_Click;
             // 
             // label4
             // 
@@ -250,7 +255,7 @@
             groupBoxUsuario.Controls.Add(label1);
             groupBoxUsuario.Controls.Add(label6);
             groupBoxUsuario.Controls.Add(label2);
-            groupBoxUsuario.Controls.Add(bntSalvar);
+            groupBoxUsuario.Controls.Add(btnCadastrar);
             groupBoxUsuario.Controls.Add(label3);
             groupBoxUsuario.Controls.Add(txtTelefone);
             groupBoxUsuario.Controls.Add(textBox1);
@@ -273,11 +278,6 @@
             btnNovoUsuario.Text = "NovoUsuario";
             btnNovoUsuario.UseVisualStyleBackColor = true;
             btnNovoUsuario.Click += btnNovoUsuario_Click;
-            // 
-            // Deletar
-            // 
-            Deletar.HeaderText = "Excluir";
-            Deletar.Name = "Deletar";
             // 
             // UsuarioView
             // 
@@ -312,7 +312,7 @@
         private TextBox textBox2;
         private TextBox txtEndereco;
         private DataGridView gvUsuarios;
-        private Button bntSalvar;
+        private Button btnCadastrar;
         private Label label4;
         private Label label5;
         private Label label6;

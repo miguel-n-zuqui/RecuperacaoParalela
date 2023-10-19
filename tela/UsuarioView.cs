@@ -6,6 +6,7 @@ namespace tela
 {
     public partial class UsuarioView : Form
     {
+        int id = -1;
         public UsuarioView()
         {
             InitializeComponent();
@@ -15,6 +16,8 @@ namespace tela
         {
             txtCargo.Clear();
             groupBoxUsuario.Visible = !groupBoxUsuario.Visible;
+
+            btnCadastrar.Text = "Cadastrar";
 
         }
 
@@ -37,11 +40,11 @@ namespace tela
 
             switch (botao.Text)
             {
-                case "Atualizar":
+                case "Cadastrar":
                     {
 
-
-                        var resultado = UsuarioRepository.Inserir(novoUsuario);
+                        var usuarioRepositorio = new UsuarioRepository();
+                        var resultado = usuarioRepositorio.Inserir(novoUsuario);
 
                         if (resultado)
                         {
@@ -56,9 +59,16 @@ namespace tela
                     }
                 case "Salvar":
                     {
-                        //_cargoRepository.Atualizar(novoCargo, id);
-                        MessageBox.Show("Cargo alterado com sucesso!!");
-                        //cadastar
+                        var usuarioRepositorio = new UsuarioRepository();
+                        var resultado = usuarioRepositorio.Atualizar(novoUsuario,id);
+                        if (resultado)
+                        {
+                            MessageBox.Show("Cargo Atualizado com Sucesso.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro! Verifique e Tente Novamente.");
+                        }
                         break;
                     }
                 default:
