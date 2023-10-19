@@ -1,6 +1,6 @@
 ﻿namespace tela
 {
-    partial class Form1
+    partial class UsuarioView
     {
         /// <summary>
         ///  Required designer variable.
@@ -39,8 +39,8 @@
             txtTelefone = new TextBox();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            dataGridView1 = new DataGridView();
+            txtEndereco = new TextBox();
+            gvUsuarios = new DataGridView();
             bntSalvar = new Button();
             label4 = new Label();
             label5 = new Label();
@@ -51,7 +51,8 @@
             btnRecarregar = new Button();
             groupBoxUsuario = new GroupBox();
             btnNovoUsuario = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            Deletar = new DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)gvUsuarios).BeginInit();
             groupBoxUsuario.SuspendLayout();
             SuspendLayout();
             // 
@@ -143,21 +144,23 @@
             textBox2.Size = new Size(100, 23);
             textBox2.TabIndex = 15;
             // 
-            // textBox3
+            // txtEndereco
             // 
-            textBox3.Location = new Point(15, 117);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 14;
+            txtEndereco.Location = new Point(15, 117);
+            txtEndereco.Name = "txtEndereco";
+            txtEndereco.Size = new Size(100, 23);
+            txtEndereco.TabIndex = 14;
             // 
-            // dataGridView1
+            // gvUsuarios
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(22, 273);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(766, 165);
-            dataGridView1.TabIndex = 17;
+            gvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gvUsuarios.Columns.AddRange(new DataGridViewColumn[] { Deletar });
+            gvUsuarios.Location = new Point(22, 273);
+            gvUsuarios.Name = "gvUsuarios";
+            gvUsuarios.RowTemplate.Height = 25;
+            gvUsuarios.Size = new Size(766, 165);
+            gvUsuarios.TabIndex = 17;
+            gvUsuarios.CellMouseClick += gvUsuarios_CellMouseClick;
             // 
             // bntSalvar
             // 
@@ -225,7 +228,7 @@
             // 
             // btnRecarregar
             // 
-            btnRecarregar.Location = new Point(679, 244);
+            btnRecarregar.Location = new Point(679, 234);
             btnRecarregar.Name = "btnRecarregar";
             btnRecarregar.Size = new Size(100, 23);
             btnRecarregar.TabIndex = 25;
@@ -251,7 +254,7 @@
             groupBoxUsuario.Controls.Add(label3);
             groupBoxUsuario.Controls.Add(txtTelefone);
             groupBoxUsuario.Controls.Add(textBox1);
-            groupBoxUsuario.Controls.Add(textBox3);
+            groupBoxUsuario.Controls.Add(txtEndereco);
             groupBoxUsuario.Controls.Add(textBox2);
             groupBoxUsuario.Location = new Point(22, 40);
             groupBoxUsuario.Name = "groupBoxUsuario";
@@ -271,7 +274,12 @@
             btnNovoUsuario.UseVisualStyleBackColor = true;
             btnNovoUsuario.Click += btnNovoUsuario_Click;
             // 
-            // Form1
+            // Deletar
+            // 
+            Deletar.HeaderText = "Excluir";
+            Deletar.Name = "Deletar";
+            // 
+            // UsuarioView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -279,10 +287,11 @@
             Controls.Add(btnNovoUsuario);
             Controls.Add(groupBoxUsuario);
             Controls.Add(btnRecarregar);
-            Controls.Add(dataGridView1);
-            Name = "Form1";
+            Controls.Add(gvUsuarios);
+            Name = "UsuarioView";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += UsuarioView_Load;
+            ((System.ComponentModel.ISupportInitialize)gvUsuarios).EndInit();
             groupBoxUsuario.ResumeLayout(false);
             groupBoxUsuario.PerformLayout();
             ResumeLayout(false);
@@ -301,8 +310,8 @@
         private TextBox txtTelefone;
         private TextBox textBox1;
         private TextBox textBox2;
-        private TextBox textBox3;
-        private DataGridView dataGridView1;
+        private TextBox txtEndereco;
+        private DataGridView gvUsuarios;
         private Button bntSalvar;
         private Label label4;
         private Label label5;
@@ -316,5 +325,6 @@
         private TextBox textBox5;
         private TextBox textBox6;
         private TextBox textBox7;
+        private DataGridViewButtonColumn Deletar;
     }
 }
